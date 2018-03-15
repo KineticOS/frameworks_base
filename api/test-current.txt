@@ -1,0 +1,810 @@
+package android.animation {
+
+  public class ValueAnimator extends android.animation.Animator {
+    method public static float getDurationScale();
+    method public static void setDurationScale(float);
+  }
+
+}
+
+package android.app {
+
+  public class ActivityManager {
+    method public void addOnUidImportanceListener(android.app.ActivityManager.OnUidImportanceListener, int);
+    method public int getPackageImportance(java.lang.String);
+    method public int getUidImportance(int);
+    method public void removeOnUidImportanceListener(android.app.ActivityManager.OnUidImportanceListener);
+  }
+
+  public static abstract interface ActivityManager.OnUidImportanceListener {
+    method public abstract void onUidImportance(int, int);
+  }
+
+  public class ActivityOptions {
+    method public void setLaunchStackId(int);
+    method public void setLaunchTaskId(int);
+    method public void setTaskOverlay(boolean, boolean);
+  }
+
+  public class NotificationManager {
+    method public android.content.ComponentName getEffectsSuppressor();
+  }
+
+  public class TimePickerDialog extends android.app.AlertDialog implements android.content.DialogInterface.OnClickListener android.widget.TimePicker.OnTimeChangedListener {
+    method public android.widget.TimePicker getTimePicker();
+  }
+
+  public final class UiAutomation {
+    method public void destroy();
+    method public android.os.ParcelFileDescriptor[] executeShellCommandRw(java.lang.String);
+    method public boolean grantRuntimePermission(java.lang.String, java.lang.String, android.os.UserHandle);
+    method public boolean revokeRuntimePermission(java.lang.String, java.lang.String, android.os.UserHandle);
+  }
+
+  public class UiModeManager {
+    method public boolean isNightModeLocked();
+    method public boolean isUiModeLocked();
+  }
+
+}
+
+package android.app.admin {
+
+  public class DevicePolicyManager {
+    method public java.lang.CharSequence getDeviceOwnerOrganizationName();
+    method public long getLastBugReportRequestTime();
+    method public long getLastNetworkLogRetrievalTime();
+    method public long getLastSecurityLogRetrievalTime();
+    method public java.util.List<java.lang.String> getOwnerInstalledCaCerts(android.os.UserHandle);
+    method public boolean isCurrentInputMethodSetByOwner();
+    method public boolean isDeviceManaged();
+    field public static final java.lang.String ACCOUNT_FEATURE_DEVICE_OR_PROFILE_OWNER_ALLOWED = "android.account.DEVICE_OR_PROFILE_OWNER_ALLOWED";
+    field public static final java.lang.String ACCOUNT_FEATURE_DEVICE_OR_PROFILE_OWNER_DISALLOWED = "android.account.DEVICE_OR_PROFILE_OWNER_DISALLOWED";
+    field public static final java.lang.String EXTRA_RESTRICTION = "android.app.extra.RESTRICTION";
+  }
+
+}
+
+package android.app.usage {
+
+  public class StorageStatsManager {
+    method public boolean isQuotaSupported(java.util.UUID);
+  }
+
+}
+
+package android.content {
+
+  public abstract class ContentResolver {
+    method public static java.lang.String[] getSyncAdapterPackagesForAuthorityAsUser(java.lang.String, int);
+  }
+
+  public abstract class Context {
+    method public abstract int getUserId();
+  }
+
+  public class ContextWrapper extends android.content.Context {
+    method public int getUserId();
+  }
+
+}
+
+package android.content.pm {
+
+  public class ApplicationInfo extends android.content.pm.PackageItemInfo implements android.os.Parcelable {
+    method public boolean isPrivilegedApp();
+    method public boolean isSystemApp();
+  }
+
+  public class LauncherApps {
+    ctor public LauncherApps(android.content.Context);
+  }
+
+  public abstract class PackageManager {
+    method public abstract java.lang.String getDefaultBrowserPackageNameAsUser(int);
+    method public abstract int getInstallReason(java.lang.String, android.os.UserHandle);
+    method public abstract java.lang.String getPermissionControllerPackageName();
+    method public abstract boolean isPermissionReviewModeEnabled();
+  }
+
+  public class ShortcutManager {
+    ctor public ShortcutManager(android.content.Context);
+  }
+
+}
+
+package android.database.sqlite {
+
+  public final class SQLiteDirectCursorDriver implements android.database.sqlite.SQLiteCursorDriver {
+    ctor public SQLiteDirectCursorDriver(android.database.sqlite.SQLiteDatabase, java.lang.String, java.lang.String, android.os.CancellationSignal);
+    method public void cursorClosed();
+    method public void cursorDeactivated();
+    method public void cursorRequeried(android.database.Cursor);
+    method public android.database.Cursor query(android.database.sqlite.SQLiteDatabase.CursorFactory, java.lang.String[]);
+    method public void setBindArguments(java.lang.String[]);
+  }
+
+  public final class SQLiteGlobal {
+    method public static java.lang.String getDefaultJournalMode();
+    method public static int getDefaultPageSize();
+    method public static java.lang.String getDefaultSyncMode();
+    method public static int getIdleConnectionTimeout();
+    method public static int getJournalSizeLimit();
+    method public static int getWALAutoCheckpoint();
+    method public static int getWALConnectionPoolSize();
+    method public static java.lang.String getWALSyncMode();
+    method public static int releaseMemory();
+  }
+
+}
+
+package android.graphics.drawable {
+
+  public class AdaptiveIconDrawable extends android.graphics.drawable.Drawable implements android.graphics.drawable.Drawable.Callback {
+    method public android.graphics.Region getSafeZone();
+    field public static final float MASK_SIZE = 100.0f;
+  }
+
+  public class ColorDrawable extends android.graphics.drawable.Drawable {
+    method public android.graphics.Xfermode getXfermode();
+  }
+
+  public abstract class Drawable {
+    method public boolean hasFocusStateSpecified();
+  }
+
+  public class ShapeDrawable extends android.graphics.drawable.Drawable {
+    method public void setXfermode(android.graphics.Xfermode);
+  }
+
+}
+
+package android.hardware.camera2 {
+
+  public abstract class CameraDevice implements java.lang.AutoCloseable {
+    method public abstract void createCustomCaptureSession(android.hardware.camera2.params.InputConfiguration, java.util.List<android.hardware.camera2.params.OutputConfiguration>, int, android.hardware.camera2.CameraCaptureSession.StateCallback, android.os.Handler) throws android.hardware.camera2.CameraAccessException;
+    field public static final int SESSION_OPERATION_MODE_CONSTRAINED_HIGH_SPEED = 1; // 0x1
+    field public static final int SESSION_OPERATION_MODE_NORMAL = 0; // 0x0
+    field public static final int SESSION_OPERATION_MODE_VENDOR_START = 32768; // 0x8000
+  }
+
+}
+
+package android.location {
+
+  public final class GnssClock implements android.os.Parcelable {
+    ctor public GnssClock();
+    method public void reset();
+    method public void resetBiasNanos();
+    method public void resetBiasUncertaintyNanos();
+    method public void resetDriftNanosPerSecond();
+    method public void resetDriftUncertaintyNanosPerSecond();
+    method public void resetFullBiasNanos();
+    method public void resetLeapSecond();
+    method public void resetTimeUncertaintyNanos();
+    method public void set(android.location.GnssClock);
+    method public void setBiasNanos(double);
+    method public void setBiasUncertaintyNanos(double);
+    method public void setDriftNanosPerSecond(double);
+    method public void setDriftUncertaintyNanosPerSecond(double);
+    method public void setFullBiasNanos(long);
+    method public void setHardwareClockDiscontinuityCount(int);
+    method public void setLeapSecond(int);
+    method public void setTimeNanos(long);
+    method public void setTimeUncertaintyNanos(double);
+  }
+
+  public final class GnssMeasurement implements android.os.Parcelable {
+    ctor public GnssMeasurement();
+    method public void reset();
+    method public void resetAutomaticGainControlLevel();
+    method public void resetCarrierCycles();
+    method public void resetCarrierFrequencyHz();
+    method public void resetCarrierPhase();
+    method public void resetCarrierPhaseUncertainty();
+    method public void resetSnrInDb();
+    method public void set(android.location.GnssMeasurement);
+    method public void setAccumulatedDeltaRangeMeters(double);
+    method public void setAccumulatedDeltaRangeState(int);
+    method public void setAccumulatedDeltaRangeUncertaintyMeters(double);
+    method public void setAutomaticGainControlLevelInDb(double);
+    method public void setCarrierCycles(long);
+    method public void setCarrierFrequencyHz(float);
+    method public void setCarrierPhase(double);
+    method public void setCarrierPhaseUncertainty(double);
+    method public void setCn0DbHz(double);
+    method public void setConstellationType(int);
+    method public void setMultipathIndicator(int);
+    method public void setPseudorangeRateMetersPerSecond(double);
+    method public void setPseudorangeRateUncertaintyMetersPerSecond(double);
+    method public void setReceivedSvTimeNanos(long);
+    method public void setReceivedSvTimeUncertaintyNanos(long);
+    method public void setSnrInDb(double);
+    method public void setState(int);
+    method public void setSvid(int);
+    method public void setTimeOffsetNanos(double);
+  }
+
+  public final class GnssMeasurementsEvent implements android.os.Parcelable {
+    ctor public GnssMeasurementsEvent(android.location.GnssClock, android.location.GnssMeasurement[]);
+  }
+
+  public final class GnssNavigationMessage implements android.os.Parcelable {
+    ctor public GnssNavigationMessage();
+    method public void reset();
+    method public void set(android.location.GnssNavigationMessage);
+    method public void setData(byte[]);
+    method public void setMessageId(int);
+    method public void setStatus(int);
+    method public void setSubmessageId(int);
+    method public void setSvid(int);
+    method public void setType(int);
+  }
+
+  public class LocationManager {
+    method public int getGnssYearOfHardware();
+  }
+
+}
+
+package android.net {
+
+  public final class IpSecManager {
+    field public static final int INVALID_SECURITY_PARAMETER_INDEX = 0; // 0x0
+  }
+
+  public class TrafficStats {
+    method public static long getLoopbackRxBytes();
+    method public static long getLoopbackRxPackets();
+    method public static long getLoopbackTxBytes();
+    method public static long getLoopbackTxPackets();
+  }
+
+}
+
+package android.os {
+
+  public class IncidentManager {
+    method public void reportIncident(android.os.IncidentReportArgs);
+    method public void reportIncident(java.lang.String, byte[]);
+  }
+
+  public final class IncidentReportArgs implements android.os.Parcelable {
+    ctor public IncidentReportArgs();
+    ctor public IncidentReportArgs(android.os.Parcel);
+    method public void addHeader(byte[]);
+    method public void addSection(int);
+    method public boolean containsSection(int);
+    method public int describeContents();
+    method public boolean isAll();
+    method public static android.os.IncidentReportArgs parseSetting(java.lang.String) throws java.lang.IllegalArgumentException;
+    method public void readFromParcel(android.os.Parcel);
+    method public int sectionCount();
+    method public void setAll(boolean);
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<android.os.IncidentReportArgs> CREATOR;
+  }
+
+  public class Process {
+    method public static final int getThreadScheduler(int) throws java.lang.IllegalArgumentException;
+  }
+
+  public final class StrictMode {
+    method public static void setViolationListener(android.os.StrictMode.ViolationListener);
+  }
+
+  public static abstract interface StrictMode.ViolationListener {
+    method public abstract void onViolation(java.lang.String);
+  }
+
+  public final class UserHandle implements android.os.Parcelable {
+    method public static int getAppId(int);
+    method public int getIdentifier();
+  }
+
+  public class UserManager {
+    field public static final java.lang.String ACTION_USER_RESTRICTIONS_CHANGED = "android.os.action.USER_RESTRICTIONS_CHANGED";
+  }
+
+}
+
+package android.print {
+
+  public final class PrintJobInfo implements android.os.Parcelable {
+    method public float getProgress();
+    method public java.lang.CharSequence getStatus(android.content.pm.PackageManager);
+  }
+
+  public final class PrinterInfo implements android.os.Parcelable {
+    method public android.graphics.drawable.Drawable loadIcon(android.content.Context);
+  }
+
+}
+
+package android.provider {
+
+  public final class Settings {
+    field public static final java.lang.String ACTION_ENTERPRISE_PRIVACY_SETTINGS = "android.settings.ENTERPRISE_PRIVACY_SETTINGS";
+  }
+
+  public static final class Settings.Secure extends android.provider.Settings.NameValueTable {
+    field public static final java.lang.String AUTOFILL_SERVICE = "autofill_service";
+    field public static final java.lang.String DISABLED_PRINT_SERVICES = "disabled_print_services";
+    field public static final deprecated java.lang.String ENABLED_NOTIFICATION_POLICY_ACCESS_PACKAGES = "enabled_notification_policy_access_packages";
+    field public static final java.lang.String SYNC_PARENT_SOUNDS = "sync_parent_sounds";
+    field public static final java.lang.String USER_SETUP_COMPLETE = "user_setup_complete";
+    field public static final java.lang.String VOICE_INTERACTION_SERVICE = "voice_interaction_service";
+  }
+
+  public static final class Telephony.Sms.Intents {
+    field public static final java.lang.String SMS_CARRIER_PROVISION_ACTION = "android.provider.Telephony.SMS_CARRIER_PROVISION";
+  }
+
+}
+
+package android.security.keystore {
+
+  public abstract class AttestationUtils {
+    method public static java.security.cert.X509Certificate[] attestDeviceIds(android.content.Context, int[], byte[]) throws android.security.keystore.DeviceIdAttestationException;
+    field public static final int ID_TYPE_IMEI = 2; // 0x2
+    field public static final int ID_TYPE_MEID = 3; // 0x3
+    field public static final int ID_TYPE_SERIAL = 1; // 0x1
+  }
+
+}
+
+package android.service.autofill {
+
+  public final class CharSequenceTransformation implements android.os.Parcelable android.service.autofill.Transformation {
+    method public void apply(android.service.autofill.ValueFinder, android.widget.RemoteViews, int) throws java.lang.Exception;
+  }
+
+  public final class ImageTransformation implements android.os.Parcelable android.service.autofill.Transformation {
+    method public void apply(android.service.autofill.ValueFinder, android.widget.RemoteViews, int) throws java.lang.Exception;
+  }
+
+  public final class LuhnChecksumValidator implements android.os.Parcelable android.service.autofill.Validator {
+    method public boolean isValid(android.service.autofill.ValueFinder);
+  }
+
+  public final class RegexValidator implements android.os.Parcelable android.service.autofill.Validator {
+    method public boolean isValid(android.service.autofill.ValueFinder);
+  }
+
+  public abstract interface ValueFinder {
+    method public abstract java.lang.String findByAutofillId(android.view.autofill.AutofillId);
+  }
+
+}
+
+package android.service.notification {
+
+  public final class Adjustment implements android.os.Parcelable {
+    ctor public Adjustment(java.lang.String, java.lang.String, android.os.Bundle, java.lang.CharSequence, int);
+    ctor protected Adjustment(android.os.Parcel);
+    method public int describeContents();
+    method public java.lang.CharSequence getExplanation();
+    method public java.lang.String getKey();
+    method public java.lang.String getPackage();
+    method public android.os.Bundle getSignals();
+    method public int getUser();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<android.service.notification.Adjustment> CREATOR;
+    field public static final java.lang.String KEY_PEOPLE = "key_people";
+    field public static final java.lang.String KEY_SNOOZE_CRITERIA = "key_snooze_criteria";
+  }
+
+  public abstract class NotificationAssistantService extends android.service.notification.NotificationListenerService {
+    ctor public NotificationAssistantService();
+    method public final void adjustNotification(android.service.notification.Adjustment);
+    method public final void adjustNotifications(java.util.List<android.service.notification.Adjustment>);
+    method public final android.os.IBinder onBind(android.content.Intent);
+    method public abstract android.service.notification.Adjustment onNotificationEnqueued(android.service.notification.StatusBarNotification);
+    method public abstract void onNotificationSnoozedUntilContext(android.service.notification.StatusBarNotification, java.lang.String);
+    method public final void unsnoozeNotification(java.lang.String);
+    field public static final java.lang.String SERVICE_INTERFACE = "android.service.notification.NotificationAssistantService";
+  }
+
+  public final class SnoozeCriterion implements android.os.Parcelable {
+    ctor public SnoozeCriterion(java.lang.String, java.lang.CharSequence, java.lang.CharSequence);
+    ctor protected SnoozeCriterion(android.os.Parcel);
+    method public int describeContents();
+    method public java.lang.CharSequence getConfirmation();
+    method public java.lang.CharSequence getExplanation();
+    method public java.lang.String getId();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<android.service.notification.SnoozeCriterion> CREATOR;
+  }
+
+}
+
+package android.service.quicksettings {
+
+  public class TileService extends android.app.Service {
+    method public static boolean isQuickSettingsSupported();
+  }
+
+}
+
+package android.telephony {
+
+  public class MbmsDownloadSession implements java.lang.AutoCloseable {
+    field public static final java.lang.String MBMS_DOWNLOAD_SERVICE_OVERRIDE_METADATA = "mbms-download-service-override";
+  }
+
+  public class MbmsStreamingSession implements java.lang.AutoCloseable {
+    field public static final java.lang.String MBMS_STREAMING_SERVICE_OVERRIDE_METADATA = "mbms-streaming-service-override";
+  }
+
+}
+
+package android.telephony.mbms {
+
+  public final class FileInfo implements android.os.Parcelable {
+    ctor public FileInfo(android.net.Uri, java.lang.String);
+  }
+
+  public final class FileServiceInfo extends android.telephony.mbms.ServiceInfo implements android.os.Parcelable {
+    ctor public FileServiceInfo(java.util.Map<java.util.Locale, java.lang.String>, java.lang.String, java.util.List<java.util.Locale>, java.lang.String, java.util.Date, java.util.Date, java.util.List<android.telephony.mbms.FileInfo>);
+  }
+
+  public final class StreamingServiceInfo extends android.telephony.mbms.ServiceInfo implements android.os.Parcelable {
+    ctor public StreamingServiceInfo(java.util.Map<java.util.Locale, java.lang.String>, java.lang.String, java.util.List<java.util.Locale>, java.lang.String, java.util.Date, java.util.Date);
+  }
+
+  public final class UriPathPair implements android.os.Parcelable {
+    method public int describeContents();
+    method public android.net.Uri getContentUri();
+    method public android.net.Uri getFilePathUri();
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<android.telephony.mbms.UriPathPair> CREATOR;
+  }
+
+}
+
+package android.telephony.mbms.vendor {
+
+  public class MbmsDownloadServiceBase extends android.os.Binder {
+    ctor public MbmsDownloadServiceBase();
+    method public int cancelDownload(android.telephony.mbms.DownloadRequest) throws android.os.RemoteException;
+    method public void dispose(int) throws android.os.RemoteException;
+    method public int download(android.telephony.mbms.DownloadRequest) throws android.os.RemoteException;
+    method public int initialize(int, android.telephony.mbms.MbmsDownloadSessionCallback) throws android.os.RemoteException;
+    method public java.util.List<android.telephony.mbms.DownloadRequest> listPendingDownloads(int) throws android.os.RemoteException;
+    method public void onAppCallbackDied(int, int);
+    method public int registerStateCallback(android.telephony.mbms.DownloadRequest, android.telephony.mbms.DownloadStateCallback) throws android.os.RemoteException;
+    method public int requestDownloadState(android.telephony.mbms.DownloadRequest, android.telephony.mbms.FileInfo) throws android.os.RemoteException;
+    method public int requestUpdateFileServices(int, java.util.List<java.lang.String>) throws android.os.RemoteException;
+    method public int resetDownloadKnowledge(android.telephony.mbms.DownloadRequest) throws android.os.RemoteException;
+    method public int setTempFileRootDirectory(int, java.lang.String) throws android.os.RemoteException;
+    method public int unregisterStateCallback(android.telephony.mbms.DownloadRequest, android.telephony.mbms.DownloadStateCallback) throws android.os.RemoteException;
+  }
+
+  public class MbmsStreamingServiceBase extends android.os.Binder {
+    ctor public MbmsStreamingServiceBase();
+    method public void dispose(int) throws android.os.RemoteException;
+    method public android.net.Uri getPlaybackUri(int, java.lang.String) throws android.os.RemoteException;
+    method public int initialize(android.telephony.mbms.MbmsStreamingSessionCallback, int) throws android.os.RemoteException;
+    method public void onAppCallbackDied(int, int);
+    method public int requestUpdateStreamingServices(int, java.util.List<java.lang.String>) throws android.os.RemoteException;
+    method public int startStreaming(int, java.lang.String, android.telephony.mbms.StreamingServiceCallback) throws android.os.RemoteException;
+    method public void stopStreaming(int, java.lang.String) throws android.os.RemoteException;
+  }
+
+  public class VendorUtils {
+    ctor public VendorUtils();
+    method public static android.content.ComponentName getAppReceiverFromPackageName(android.content.Context, java.lang.String);
+    field public static final java.lang.String ACTION_CLEANUP = "android.telephony.mbms.action.CLEANUP";
+    field public static final java.lang.String ACTION_DOWNLOAD_RESULT_INTERNAL = "android.telephony.mbms.action.DOWNLOAD_RESULT_INTERNAL";
+    field public static final java.lang.String ACTION_FILE_DESCRIPTOR_REQUEST = "android.telephony.mbms.action.FILE_DESCRIPTOR_REQUEST";
+    field public static final java.lang.String EXTRA_FD_COUNT = "android.telephony.mbms.extra.FD_COUNT";
+    field public static final java.lang.String EXTRA_FINAL_URI = "android.telephony.mbms.extra.FINAL_URI";
+    field public static final java.lang.String EXTRA_FREE_URI_LIST = "android.telephony.mbms.extra.FREE_URI_LIST";
+    field public static final java.lang.String EXTRA_PAUSED_LIST = "android.telephony.mbms.extra.PAUSED_LIST";
+    field public static final java.lang.String EXTRA_PAUSED_URI_LIST = "android.telephony.mbms.extra.PAUSED_URI_LIST";
+    field public static final java.lang.String EXTRA_SERVICE_ID = "android.telephony.mbms.extra.SERVICE_ID";
+    field public static final java.lang.String EXTRA_TEMP_FILES_IN_USE = "android.telephony.mbms.extra.TEMP_FILES_IN_USE";
+    field public static final java.lang.String EXTRA_TEMP_FILE_ROOT = "android.telephony.mbms.extra.TEMP_FILE_ROOT";
+    field public static final java.lang.String EXTRA_TEMP_LIST = "android.telephony.mbms.extra.TEMP_LIST";
+  }
+
+}
+
+package android.test.mock {
+
+  public class MockContext extends android.content.Context {
+    method public int getUserId();
+  }
+
+  public deprecated class MockPackageManager extends android.content.pm.PackageManager {
+    method public java.lang.String getDefaultBrowserPackageNameAsUser(int);
+    method public int getInstallReason(java.lang.String, android.os.UserHandle);
+    method public java.lang.String getPermissionControllerPackageName();
+    method public boolean isPermissionReviewModeEnabled();
+  }
+
+}
+
+package android.transition {
+
+  public class TransitionManager {
+    method public android.transition.Transition getTransition(android.transition.Scene);
+  }
+
+}
+
+package android.util.proto {
+
+  public final class EncodedBuffer {
+    ctor public EncodedBuffer();
+    ctor public EncodedBuffer(int);
+    method public void dumpBuffers(java.lang.String);
+    method public static void dumpByteString(java.lang.String, java.lang.String, byte[]);
+    method public void editRawFixed32(int, int);
+    method public byte[] getBytes(int);
+    method public int getChunkCount();
+    method public java.lang.String getDebugString();
+    method public int getRawFixed32At(int);
+    method public static int getRawVarint32Size(int);
+    method public static int getRawVarint64Size(long);
+    method public static int getRawZigZag32Size(int);
+    method public static int getRawZigZag64Size(long);
+    method public int getReadPos();
+    method public int getReadableSize();
+    method public int getWriteBufIndex();
+    method public int getWriteIndex();
+    method public int getWritePos();
+    method public byte readRawByte();
+    method public int readRawFixed32();
+    method public long readRawUnsigned();
+    method public void rewindRead();
+    method public void rewindWriteTo(int);
+    method public void skipRead(int);
+    method public void startEditing();
+    method public void writeFromThisBuffer(int, int);
+    method public void writeRawBuffer(byte[]);
+    method public void writeRawBuffer(byte[], int, int);
+    method public void writeRawByte(byte);
+    method public void writeRawFixed32(int);
+    method public void writeRawFixed64(long);
+    method public void writeRawVarint32(int);
+    method public void writeRawVarint64(long);
+    method public void writeRawZigZag32(int);
+    method public void writeRawZigZag64(long);
+  }
+
+  public final class ProtoOutputStream {
+    ctor public ProtoOutputStream();
+    ctor public ProtoOutputStream(int);
+    ctor public ProtoOutputStream(java.io.OutputStream);
+    ctor public ProtoOutputStream(java.io.FileDescriptor);
+    method public static int checkFieldId(long, long);
+    method public static int convertObjectIdToOrdinal(int);
+    method public void dump(java.lang.String);
+    method public void end(long);
+    method public deprecated void endObject(long);
+    method public deprecated void endRepeatedObject(long);
+    method public void flush();
+    method public byte[] getBytes();
+    method public static int getDepthFromToken(long);
+    method public static int getObjectIdFromToken(long);
+    method public static boolean getRepeatedFromToken(long);
+    method public static int getSizePosFromToken(long);
+    method public static int getTagSizeFromToken(long);
+    method public static long makeFieldId(int, long);
+    method public static long makeToken(int, boolean, int, int, int);
+    method public long start(long);
+    method public deprecated long startObject(long);
+    method public deprecated long startRepeatedObject(long);
+    method public static java.lang.String token2String(long);
+    method public void write(long, double);
+    method public void write(long, float);
+    method public void write(long, int);
+    method public void write(long, long);
+    method public void write(long, boolean);
+    method public void write(long, java.lang.String);
+    method public void write(long, byte[]);
+    method public deprecated void writeBool(long, boolean);
+    method public deprecated void writeBytes(long, byte[]);
+    method public deprecated void writeDouble(long, double);
+    method public deprecated void writeEnum(long, int);
+    method public deprecated void writeFixed32(long, int);
+    method public deprecated void writeFixed64(long, long);
+    method public deprecated void writeFloat(long, float);
+    method public deprecated void writeInt32(long, int);
+    method public deprecated void writeInt64(long, long);
+    method public deprecated void writeObject(long, byte[]);
+    method public deprecated void writePackedBool(long, boolean[]);
+    method public deprecated void writePackedDouble(long, double[]);
+    method public deprecated void writePackedEnum(long, int[]);
+    method public deprecated void writePackedFixed32(long, int[]);
+    method public deprecated void writePackedFixed64(long, long[]);
+    method public deprecated void writePackedFloat(long, float[]);
+    method public deprecated void writePackedInt32(long, int[]);
+    method public deprecated void writePackedInt64(long, long[]);
+    method public deprecated void writePackedSFixed32(long, int[]);
+    method public deprecated void writePackedSFixed64(long, long[]);
+    method public deprecated void writePackedSInt32(long, int[]);
+    method public deprecated void writePackedSInt64(long, long[]);
+    method public deprecated void writePackedUInt32(long, int[]);
+    method public deprecated void writePackedUInt64(long, long[]);
+    method public deprecated void writeRepeatedBool(long, boolean);
+    method public deprecated void writeRepeatedBytes(long, byte[]);
+    method public deprecated void writeRepeatedDouble(long, double);
+    method public deprecated void writeRepeatedEnum(long, int);
+    method public deprecated void writeRepeatedFixed32(long, int);
+    method public deprecated void writeRepeatedFixed64(long, long);
+    method public deprecated void writeRepeatedFloat(long, float);
+    method public deprecated void writeRepeatedInt32(long, int);
+    method public deprecated void writeRepeatedInt64(long, long);
+    method public deprecated void writeRepeatedObject(long, byte[]);
+    method public deprecated void writeRepeatedSFixed32(long, int);
+    method public deprecated void writeRepeatedSFixed64(long, long);
+    method public deprecated void writeRepeatedSInt32(long, int);
+    method public deprecated void writeRepeatedSInt64(long, long);
+    method public deprecated void writeRepeatedString(long, java.lang.String);
+    method public deprecated void writeRepeatedUInt32(long, int);
+    method public deprecated void writeRepeatedUInt64(long, long);
+    method public deprecated void writeSFixed32(long, int);
+    method public deprecated void writeSFixed64(long, long);
+    method public deprecated void writeSInt32(long, int);
+    method public deprecated void writeSInt64(long, long);
+    method public deprecated void writeString(long, java.lang.String);
+    method public void writeTag(int, int);
+    method public deprecated void writeUInt32(long, int);
+    method public deprecated void writeUInt64(long, long);
+    field public static final long FIELD_COUNT_MASK = 16492674416640L; // 0xf0000000000L
+    field public static final long FIELD_COUNT_PACKED = 5497558138880L; // 0x50000000000L
+    field public static final long FIELD_COUNT_REPEATED = 2199023255552L; // 0x20000000000L
+    field public static final int FIELD_COUNT_SHIFT = 40; // 0x28
+    field public static final long FIELD_COUNT_SINGLE = 1099511627776L; // 0x10000000000L
+    field public static final long FIELD_COUNT_UNKNOWN = 0L; // 0x0L
+    field public static final int FIELD_ID_MASK = -8; // 0xfffffff8
+    field public static final int FIELD_ID_SHIFT = 3; // 0x3
+    field public static final long FIELD_TYPE_BOOL = 55834574848L; // 0xd00000000L
+    field public static final long FIELD_TYPE_BYTES = 64424509440L; // 0xf00000000L
+    field public static final long FIELD_TYPE_DOUBLE = 4294967296L; // 0x100000000L
+    field public static final long FIELD_TYPE_ENUM = 68719476736L; // 0x1000000000L
+    field public static final long FIELD_TYPE_FIXED32 = 38654705664L; // 0x900000000L
+    field public static final long FIELD_TYPE_FIXED64 = 42949672960L; // 0xa00000000L
+    field public static final long FIELD_TYPE_FLOAT = 8589934592L; // 0x200000000L
+    field public static final long FIELD_TYPE_INT32 = 12884901888L; // 0x300000000L
+    field public static final long FIELD_TYPE_INT64 = 17179869184L; // 0x400000000L
+    field public static final long FIELD_TYPE_MASK = 1095216660480L; // 0xff00000000L
+    field public static final long FIELD_TYPE_OBJECT = 73014444032L; // 0x1100000000L
+    field public static final long FIELD_TYPE_SFIXED32 = 47244640256L; // 0xb00000000L
+    field public static final long FIELD_TYPE_SFIXED64 = 51539607552L; // 0xc00000000L
+    field public static final int FIELD_TYPE_SHIFT = 32; // 0x20
+    field public static final long FIELD_TYPE_SINT32 = 30064771072L; // 0x700000000L
+    field public static final long FIELD_TYPE_SINT64 = 34359738368L; // 0x800000000L
+    field public static final long FIELD_TYPE_STRING = 60129542144L; // 0xe00000000L
+    field public static final long FIELD_TYPE_UINT32 = 21474836480L; // 0x500000000L
+    field public static final long FIELD_TYPE_UINT64 = 25769803776L; // 0x600000000L
+    field public static final long FIELD_TYPE_UNKNOWN = 0L; // 0x0L
+    field public static final java.lang.String TAG = "ProtoOutputStream";
+    field public static final int WIRE_TYPE_END_GROUP = 4; // 0x4
+    field public static final int WIRE_TYPE_FIXED32 = 5; // 0x5
+    field public static final int WIRE_TYPE_FIXED64 = 1; // 0x1
+    field public static final int WIRE_TYPE_LENGTH_DELIMITED = 2; // 0x2
+    field public static final int WIRE_TYPE_MASK = 7; // 0x7
+    field public static final int WIRE_TYPE_START_GROUP = 3; // 0x3
+    field public static final int WIRE_TYPE_VARINT = 0; // 0x0
+  }
+
+  public class ProtoParseException extends java.lang.RuntimeException {
+    ctor public ProtoParseException(java.lang.String);
+  }
+
+}
+
+package android.view {
+
+  public abstract class ActionMode {
+    method public boolean isUiFocusable();
+  }
+
+  public class FocusFinder {
+    method public static void sort(android.view.View[], int, int, android.view.ViewGroup, boolean);
+  }
+
+  public final class InputDevice implements android.os.Parcelable {
+    method public void disable();
+    method public void enable();
+  }
+
+  public final class KeyboardShortcutGroup implements android.os.Parcelable {
+    ctor public KeyboardShortcutGroup(java.lang.CharSequence, java.util.List<android.view.KeyboardShortcutInfo>, boolean);
+    ctor public KeyboardShortcutGroup(java.lang.CharSequence, boolean);
+    method public boolean isSystemGroup();
+  }
+
+  public final class MotionEvent extends android.view.InputEvent implements android.os.Parcelable {
+    method public void setActionButton(int);
+    method public void setButtonState(int);
+  }
+
+  public class View implements android.view.accessibility.AccessibilityEventSource android.graphics.drawable.Drawable.Callback android.view.KeyEvent.Callback {
+    method public android.view.View getTooltipView();
+    method public boolean isDefaultFocusHighlightNeeded(android.graphics.drawable.Drawable, android.graphics.drawable.Drawable);
+    method public boolean restoreFocusInCluster(int);
+    method public boolean restoreFocusNotInCluster();
+    method public void setAutofilled(boolean);
+    method public final void setFocusedInCluster();
+  }
+
+  public class ViewConfiguration {
+    method public static int getHoverTooltipHideShortTimeout();
+    method public static int getHoverTooltipHideTimeout();
+    method public static int getHoverTooltipShowTimeout();
+    method public static int getLongPressTooltipHideTimeout();
+  }
+
+  public static class WindowManager.LayoutParams extends android.view.ViewGroup.LayoutParams implements android.os.Parcelable {
+    field public static final int ACCESSIBILITY_TITLE_CHANGED = 33554432; // 0x2000000
+    field public static final int PRIVATE_FLAG_NO_MOVE_ANIMATION = 64; // 0x40
+    field public java.lang.CharSequence accessibilityTitle;
+    field public int privateFlags;
+  }
+
+}
+
+package android.view.accessibility {
+
+  public class AccessibilityNodeInfo implements android.os.Parcelable {
+    method public static void setNumInstancesInUseCounter(java.util.concurrent.atomic.AtomicInteger);
+  }
+
+  public final class AccessibilityWindowInfo implements android.os.Parcelable {
+    method public static void setNumInstancesInUseCounter(java.util.concurrent.atomic.AtomicInteger);
+  }
+
+}
+
+package android.view.autofill {
+
+  public final class AutofillId implements android.os.Parcelable {
+    ctor public AutofillId(int);
+  }
+
+}
+
+package android.widget {
+
+  public class CalendarView extends android.widget.FrameLayout {
+    method public boolean getBoundsForDate(long, android.graphics.Rect);
+  }
+
+  public class DatePicker extends android.widget.FrameLayout {
+    method public int getMode();
+    field public static final int MODE_CALENDAR = 2; // 0x2
+    field public static final int MODE_SPINNER = 1; // 0x1
+  }
+
+  public class NumberPicker extends android.widget.LinearLayout {
+    method public java.lang.CharSequence getDisplayedValueForCurrentSelection();
+  }
+
+  public class PopupMenu {
+    method public android.widget.ListView getMenuListView();
+  }
+
+  public class Spinner extends android.widget.AbsSpinner implements android.content.DialogInterface.OnClickListener {
+    method public boolean isPopupShowing();
+  }
+
+  public class TimePicker extends android.widget.FrameLayout {
+    method public android.view.View getAmView();
+    method public android.view.View getHourView();
+    method public android.view.View getMinuteView();
+    method public int getMode();
+    method public android.view.View getPmView();
+    field public static final int MODE_CLOCK = 2; // 0x2
+    field public static final int MODE_SPINNER = 1; // 0x1
+  }
+
+  public class Toolbar extends android.view.ViewGroup {
+    method public android.view.View getNavigationView();
+  }
+
+}
+
